@@ -6,15 +6,13 @@ public class CustomerTest {
 
     @Test
     public void isAdult(){
-        Customer Pawel = new Customer();
-        Pawel.setAge(17);
-        assert Pawel.isAdult() == false;
+        Customer Mateusz = new Customer("Mateusz","Kowalski", 17);
+        assert !Mateusz.isAdult();
     }
     @Test
     public void isAdult1(){
-        Customer Pawel = new Customer();
-        Pawel.setAge(18);
-        assert Pawel.isAdult() == true;
+        Customer Pawel = new Customer("Paweł", "Kumanowski", 32);
+        assert Pawel.isAdult();
     }
 
 }

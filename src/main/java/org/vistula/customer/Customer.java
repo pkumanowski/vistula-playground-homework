@@ -9,13 +9,16 @@ public class Customer {
     private String firstName;
     private String lastName;
     private int age;
-    private List<BasketItem> basket;
+    //private List<BasketItem> basket;
 
-    public Customer(){
+
+    public Customer(String firstName, String lastName, int age){
         this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
+        //this.basket = basket;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -41,13 +44,9 @@ public class Customer {
         this.age = age;
     }
 
-    public List<BasketItem> getBasket() {
-        return basket;
-    }
+    //public List<BasketItem> getBasket() { return basket; }
 
-    public void setBasket(List<BasketItem> basket) {
-        this.basket = basket;
-    }
+    //public void setBasket(List<BasketItem> basket) { this.basket = basket; }
 
     public boolean isAdult(){
         if (age>= 18){
