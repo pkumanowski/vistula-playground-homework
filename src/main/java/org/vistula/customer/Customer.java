@@ -81,7 +81,7 @@ public class Customer {
             System.out.println(item.toString());
         }
     }
-    private void removeItemsFromBasket(BasketItem item){
+    public void removeItemsFromBasket(BasketItem item){
         if (basket.contains(item)){
             basket.remove(item);
         }

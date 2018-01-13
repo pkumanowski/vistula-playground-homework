@@ -27,7 +27,7 @@ public class BasketItemTest {
         Customer Arek = new Customer("Arek","Kowalski", 22, basket);
         basket.add(bike);
         basket.add(kite);
-        assertThat(Arek.basketItemsPrice()==1800);
+        assertThat(Arek.basketItemsPrice()==1800).isTrue();
     }
     @Test
     public void emptyBasketAgeRestricted(){
@@ -43,7 +43,7 @@ public class BasketItemTest {
         List<BasketItem> basket = new ArrayList<>();
         Customer Marcin = new Customer("Marcin", "Kowalski", 28, basket);
         basket.add(monitor);
-        assertThat(monitor.getPrice());
+        assertThat(monitor.getPrice()==4000).isTrue();
     }
     @Test
     public void removingItemsFromBasket(){
@@ -53,7 +53,7 @@ public class BasketItemTest {
         Customer Marcin = new Customer("Marcin", "Kowalski", 30, basket);
         basket.add(beer);
         basket.add(kolano);
-        basket.remove(kolano);
-        assertThat(basket.equals(10));
+        Marcin.removeItemsFromBasket(kolano);
+        assertThat(basket.contains(beer)).isTrue();
     }
 }

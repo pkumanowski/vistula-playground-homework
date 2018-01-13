@@ -26,7 +26,6 @@ public class BasketItem {
         this.ageRestrictedItem = ageRestrictedItem;
 
     }
-    @Override
     public String toString(){
         return price + "name of the item: ";
     }
