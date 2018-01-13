@@ -9,14 +9,14 @@ public class Customer {
     private String firstName;
     private String lastName;
     private int age;
-    //private List<BasketItem> basket;
+    private List<BasketItem> basket;
 
 
-    public Customer(String firstName, String lastName, int age){
+    public Customer(String firstName, String lastName, int age, List<BasketItem> basket) {
         this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
-        //this.basket = basket;
+        this.basket = basket;
     }
 
 
@@ -44,16 +44,46 @@ public class Customer {
         this.age = age;
     }
 
-    //public List<BasketItem> getBasket() { return basket; }
+    public List<BasketItem> getBasket() { return basket; }
 
-    //public void setBasket(List<BasketItem> basket) { this.basket = basket; }
+    public void setBasket(List<BasketItem> basket) { this.basket = basket; }
 
-    public boolean isAdult(){
-        if (age>= 18){
+    public boolean isAdult() {
+        if (age >= 18) {
             return true;
-        }
-        else {
+        } else {
             return false;
+        }
+
+    }
+    public float basketItemsPrice() {
+        float sum;
+        sum = 0;
+        for (BasketItem item : basket) {
+            sum += item.getPrice();
+        }
+        return sum;
+    }
+
+    public void addItem(BasketItem item) {
+        if (item.isAgeRestrictedItem()) {
+            if (isAdult()) {
+                basket.add(item);
+            } else {
+                return;
+            }
+        }
+        basket.add(item);
+
+    }
+    public void showAllItemsInBasket(){
+        for (BasketItem item: basket){
+            System.out.println(item.toString());
+        }
+    }
+    private void removeItemsFromBasket(BasketItem item){
+        if (basket.contains(item)){
+            basket.remove(item);
         }
     }
 }
