@@ -56,4 +56,25 @@ public class BasketItemTest {
         Marcin.removeItemsFromBasket(kolano);
         assertThat(basket.contains(beer)).isTrue();
     }
+    @Test
+    public void addingItemsFromBasket() {
+        BasketItem beer = new BasketItem(10, true);
+        BasketItem kolano = new BasketItem(400, false);
+        List<BasketItem> basket = new ArrayList<>();
+        Customer Marcin = new Customer("Marcin", "Kowalski", 30, basket);
+        basket.add(beer);
+        basket.add(kolano);
+        Marcin.addItem(kolano);
+        assertThat(basket.contains(kolano)).isTrue();
+    }
+    @Test
+    public void showAllItemsInBasket() {
+        BasketItem beer = new BasketItem(10, true);
+        BasketItem kolano = new BasketItem(400, false);
+        List<BasketItem> basket = new ArrayList<>();
+        Customer Marcin = new Customer("Marcin", "Kowalski", 30, basket);
+        basket.add(beer);
+        basket.add(kolano);
+        Marcin.showAllItemsInBasket();
+    }
 }
