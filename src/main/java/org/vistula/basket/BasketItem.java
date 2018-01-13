@@ -28,6 +28,6 @@ public class BasketItem {
     }
     @Override
     public String toString(){
-        return price + " name of the item: ";
+        return price + "name of the item: ";
     }
 }

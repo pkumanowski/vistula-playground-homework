@@ -39,7 +39,7 @@ public class BasketItemTest {
     }
     @Test
     public void isItemOnPromotion(){
-        BasketItem monitor = new PromoteItem(5000, false, 50);
+        BasketItem monitor = new PromoteItem(5000, false, 10);
         List<BasketItem> basket = new ArrayList<>();
         Customer Marcin = new Customer("Marcin", "Kowalski", 28, basket);
         basket.add(monitor);
